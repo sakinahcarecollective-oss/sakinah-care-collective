@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
@@ -6,7 +5,16 @@ export default function Home() {
     <main className="bg-[#FAF8F4] text-[#4F5A4D]">
 
       {/* HERO */}
-      <section className="mx-auto max-w-7xl px-8 py-24 text-center">
+      <section className="mx-auto max-w-7xl px-8 py-20 text-center">
+
+        {/* Logo */}
+        <div className="mb-10 flex justify-center">
+          <img
+            src="/images/sakinah-logo.png"
+            alt="Sakinah Care Collective Logo"
+            className="w-[260px] md:w-[340px] object-contain"
+          />
+        </div>
 
         <p className="mb-4 text-sm uppercase tracking-[0.35em] text-[#A8B5A2]">
           Curated Wellness for Muslim Women
@@ -29,12 +37,10 @@ export default function Home() {
         >
           Join the Waitlist
         </Link>
-
       </section>
 
-      {/* SAKINAH BOX */}
+      {/* COMING SOON */}
       <section className="mx-auto max-w-7xl px-8 pb-32">
-
         <div className="grid items-center gap-16 lg:grid-cols-2">
 
           <div>
@@ -47,31 +53,34 @@ export default function Home() {
             </h2>
 
             <p className="text-lg leading-relaxed text-[#6F7A66]">
-              The Sakinah Box is a thoughtfully curated wellness experience
-              for Muslim women, bringing together meaningful resources,
-              intentional self-care, and faith-centered inspiration in one
-              beautiful offering.
+              Our signature care box is currently being thoughtfully curated to
+              bring together meaningful wellness essentials, intentional
+              self-care, and faith-centered nourishment for Muslim women.
             </p>
           </div>
 
           <div className="flex justify-center">
-            <Image
-              src="/images/sakinah-box.png"
-              alt="Sakinah Box"
-              width={3000}
-              height={3000}
-              priority
-              className="w-full max-w-[1200px] drop-shadow-2xl"
-            />
+            <div className="flex h-[420px] w-full max-w-[600px] flex-col items-center justify-center rounded-[40px] border border-[#D9DED4] bg-white/50 px-10 text-center shadow-sm">
+              <p className="mb-4 text-sm uppercase tracking-[0.35em] text-[#A8B5A2]">
+                Launching Soon
+              </p>
+
+              <h3 className="mb-4 font-[family-name:var(--font-heading)] text-5xl font-light">
+                Coming Soon
+              </h3>
+
+              <p className="max-w-md text-lg leading-relaxed text-[#6F7A66]">
+                Our first signature care box is currently in development.
+                Join the waitlist for early access and launch updates.
+              </p>
+            </div>
           </div>
 
         </div>
-
       </section>
 
       {/* MISSION */}
       <section className="mx-auto max-w-7xl px-8 py-24 text-center">
-
         <p className="mb-4 text-sm uppercase tracking-[0.35em] text-[#A8B5A2]">
           Our Mission
         </p>
@@ -87,7 +96,6 @@ export default function Home() {
         </p>
 
         <div className="grid gap-8 md:grid-cols-3">
-
           <div className="rounded-[32px] bg-white p-10 shadow-sm transition hover:-translate-y-1">
             <h3 className="mb-4 font-[family-name:var(--font-heading)] text-3xl font-light">
               Nourish
@@ -132,16 +140,12 @@ export default function Home() {
               Gentle Rituals • Breathing Practices • Reflection • Rest
             </p>
           </div>
-
         </div>
-
       </section>
 
       {/* QUOTE */}
       <section className="px-8 pb-24">
-
         <div className="mx-auto max-w-4xl rounded-[40px] bg-white p-14 text-center shadow-sm">
-
           <p className="mb-6 font-[family-name:var(--font-heading)] text-3xl font-light leading-relaxed">
             “Verily, in the remembrance of Allah do hearts find rest.”
           </p>
@@ -149,16 +153,12 @@ export default function Home() {
           <p className="text-[#6F7A66]">
             Qur&apos;an 13:28
           </p>
-
         </div>
-
       </section>
 
       {/* CTA */}
       <section className="px-8 pb-28">
-
         <div className="mx-auto max-w-6xl rounded-[40px] bg-[#4F5A4D] p-16 text-center text-white">
-
           <h2 className="mb-6 font-[family-name:var(--font-heading)] text-5xl font-light">
             Join the Waitlist
           </h2>
@@ -174,9 +174,7 @@ export default function Home() {
           >
             Join Now
           </Link>
-
         </div>
-
       </section>
 
     </main>
