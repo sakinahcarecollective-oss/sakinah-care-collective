@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 
 export default function Home() {
@@ -39,7 +41,8 @@ export default function Home() {
         </Link>
       </section>
 
-      {/* COMING SOON */}
+
+      {/* SIGNATURE OFFERING */}
       <section className="mx-auto max-w-7xl px-8 pb-32">
         <div className="grid items-center gap-16 lg:grid-cols-2">
 
@@ -53,32 +56,49 @@ export default function Home() {
             </h2>
 
             <p className="text-lg leading-relaxed text-[#6F7A66]">
-              Our signature care box is currently being thoughtfully curated to
-              bring together meaningful wellness essentials, intentional
-              self-care, and faith-centered nourishment for Muslim women.
+              Our signature care box brings together meaningful wellness
+              essentials, intentional self-care, and faith-centered
+              nourishment for Muslim women.
             </p>
           </div>
 
+
           <div className="flex justify-center">
             <div className="flex h-[420px] w-full max-w-[600px] flex-col items-center justify-center rounded-[40px] border border-[#D9DED4] bg-white/50 px-10 text-center shadow-sm">
+
               <p className="mb-4 text-sm uppercase tracking-[0.35em] text-[#A8B5A2]">
-                Launching Soon
+                Available Now
               </p>
 
               <h3 className="mb-4 font-[family-name:var(--font-heading)] text-5xl font-light">
-                Coming Soon
+                The Sakinah Box
               </h3>
 
-              <p className="max-w-md text-lg leading-relaxed text-[#6F7A66]">
-                Our first signature care box is currently in development.
-                Join the waitlist for early access and launch updates.
+              <p className="mb-8 max-w-md text-lg leading-relaxed text-[#6F7A66]">
+                A thoughtfully curated wellness experience designed to
+                nurture reflection, nourishment, and inner peace.
               </p>
+
+              <button
+                onClick={async () => {
+                  const response = await fetch("/api/checkout", {
+                    method: "POST",
+                  });
+
+                  const data = await response.json();
+
+                  window.location.href = data.url;
+                }}
+                className="rounded-full bg-[#4F5A4D] px-8 py-4 text-white transition hover:opacity-90"
+              >
+                Buy Your Sakinah Box — $45
+              </button>
+
             </div>
           </div>
 
         </div>
       </section>
-
       {/* MISSION */}
       <section className="mx-auto max-w-7xl px-8 py-24 text-center">
         <p className="mb-4 text-sm uppercase tracking-[0.35em] text-[#A8B5A2]">
@@ -160,20 +180,28 @@ export default function Home() {
       <section className="px-8 pb-28">
         <div className="mx-auto max-w-6xl rounded-[40px] bg-[#4F5A4D] p-16 text-center text-white">
           <h2 className="mb-6 font-[family-name:var(--font-heading)] text-5xl font-light">
-            Join the Waitlist
+            Ready to Begin Your Journey?
           </h2>
 
           <p className="mx-auto mb-10 max-w-2xl text-lg text-white/80">
-            Be the first to hear about upcoming offerings, wellness
-            resources, and community updates.
+            Experience intentional wellness, reflection, and nourishment
+            through the Sakinah Box.
           </p>
 
-          <Link
-            href="/contact"
+          <button
+            onClick={async () => {
+              const response = await fetch("/api/checkout", {
+                method: "POST",
+              });
+
+              const data = await response.json();
+
+              window.location.href = data.url;
+            }}
             className="rounded-full bg-white px-8 py-4 text-[#4F5A4D] transition hover:opacity-90"
           >
-            Join Now
-          </Link>
+            Purchase Your Sakinah Box — $45
+          </button>
         </div>
       </section>
 
