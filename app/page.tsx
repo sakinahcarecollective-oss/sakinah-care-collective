@@ -22,7 +22,7 @@ export default function Home() {
         {/* Official Logo */}
         <div className="mb-12 flex justify-center">
           <img
-            src="/images/sakinah-official-logo(2).png"
+            src="/images/sakinah-official-logo.png"
             alt="Sakinah Care Collective"
             className="h-auto w-full max-w-[340px] object-contain md:max-w-[430px]"
           />
