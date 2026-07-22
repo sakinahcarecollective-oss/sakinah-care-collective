@@ -54,6 +54,10 @@ export default function RootLayout({
               <Link href="/contact" className="transition hover:opacity-70">
                 Contact
               </Link>
+
+              <Link href="/checkout" className="transition hover:opacity-70">
+                Checkout
+              </Link>
             </nav>
           </div>
         </header>
@@ -68,8 +72,8 @@ export default function RootLayout({
               </h3>
 
               <p className="mb-8 max-w-xl text-[#6F7A66]">
-                Curated wellness experiences rooted in faith,
-                reflection, and inner peace.
+                Curated wellness experiences rooted in faith, reflection, and
+                inner peace.
               </p>
 
               <div className="mb-8 flex flex-wrap justify-center gap-8 text-sm uppercase tracking-[0.15em]">
@@ -87,6 +91,10 @@ export default function RootLayout({
 
                 <Link href="/contact" className="transition hover:opacity-70">
                   Contact
+                </Link>
+
+                <Link href="/checkout" className="transition hover:opacity-70">
+                  Checkout
                 </Link>
               </div>
 

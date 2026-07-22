@@ -26,43 +26,8 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-[#FAF8F4] text-[#4F5A4D]">
-      {/* NAVIGATION */}
-      <header className="border-b border-[#D9DED4] bg-[#FAF8F4]">
-        <nav className="mx-auto flex max-w-7xl items-center justify-between px-8 py-5">
-          <Link
-            href="/"
-            className="font-[family-name:var(--font-heading)] text-2xl font-light"
-          >
-            Sakinah Care Collective
-          </Link>
-
-          <div className="flex items-center gap-6 text-sm uppercase tracking-[0.15em]">
-            <Link href="/" className="transition hover:opacity-60">
-              Home
-            </Link>
-
-            <Link href="/about" className="transition hover:opacity-60">
-              About
-            </Link>
-
-            <Link href="/contact" className="transition hover:opacity-60">
-              Contact
-            </Link>
-
-            <button
-              type="button"
-              onClick={beginCheckout}
-              className="rounded-full bg-[#4F5A4D] px-5 py-3 text-white transition hover:opacity-90"
-            >
-              Checkout
-            </button>
-          </div>
-        </nav>
-      </header>
-
       {/* HERO */}
       <section className="mx-auto max-w-7xl px-8 py-20 text-center">
-        {/* Official Logo */}
         <div className="mb-12 flex justify-center">
           <img
             src="/images/sakinah-official-logo.png"
