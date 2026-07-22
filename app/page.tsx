@@ -4,19 +4,62 @@ import Link from "next/link";
 
 export default function Home() {
   const beginCheckout = async () => {
-    const response = await fetch("/api/checkout", {
-      method: "POST",
-    });
+    try {
+      const response = await fetch("/api/checkout", {
+        method: "POST",
+      });
 
-    const data = await response.json();
+      const data = await response.json();
 
-    if (data.url) {
-      window.location.href = data.url;
+      if (!response.ok) {
+        throw new Error(data.error || "Unable to begin checkout.");
+      }
+
+      if (data.url) {
+        window.location.href = data.url;
+      }
+    } catch (error) {
+      console.error("Checkout error:", error);
+      alert("Checkout could not be opened. Please try again.");
     }
   };
 
   return (
-    <main className="bg-[#FAF8F4] text-[#4F5A4D]">
+    <main className="min-h-screen bg-[#FAF8F4] text-[#4F5A4D]">
+      {/* NAVIGATION */}
+      <header className="border-b border-[#D9DED4] bg-[#FAF8F4]">
+        <nav className="mx-auto flex max-w-7xl items-center justify-between px-8 py-5">
+          <Link
+            href="/"
+            className="font-[family-name:var(--font-heading)] text-2xl font-light"
+          >
+            Sakinah Care Collective
+          </Link>
+
+          <div className="flex items-center gap-6 text-sm uppercase tracking-[0.15em]">
+            <Link href="/" className="transition hover:opacity-60">
+              Home
+            </Link>
+
+            <Link href="/about" className="transition hover:opacity-60">
+              About
+            </Link>
+
+            <Link href="/contact" className="transition hover:opacity-60">
+              Contact
+            </Link>
+
+            <button
+              type="button"
+              onClick={beginCheckout}
+              className="rounded-full bg-[#4F5A4D] px-5 py-3 text-white transition hover:opacity-90"
+            >
+              Checkout
+            </button>
+          </div>
+        </nav>
+      </header>
+
       {/* HERO */}
       <section className="mx-auto max-w-7xl px-8 py-20 text-center">
         {/* Official Logo */}
